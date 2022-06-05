@@ -1,0 +1,1 @@
+Stop-VM -Name "Ubuntu 18.04 LTS"

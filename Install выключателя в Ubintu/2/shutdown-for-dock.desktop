@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Выключение
+# Exec=gnome-session-quit --power-off
+Exec=sh -c 'zenity --question --text="Выключить виртуальную машину ?" --ok-label="Да" --cancel-label="Нет" && (killall -s SIGINT P166MClient; killall -s SIGINT P166MPlan; sleep 1; poweroff)'
+Comment=Shutdown button for Ubuntu dock
+Terminal=false
+Type=Application
+Icon=system-shutdown

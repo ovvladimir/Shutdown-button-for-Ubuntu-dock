@@ -1,0 +1,6 @@
+Файл InstallOFF.sh разместить в /temp, иконку в /temp/bin
+
+sudo gedit /temp/InstallOFF.sh
+sudo chmod +x /temp/InstallOFF.sh
+cd /temp
+./POWEROFF.desktop
