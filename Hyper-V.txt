@@ -1,0 +1,41 @@
+HYPER-V
+Параметры Hyper-V - Режим расширенного сеанса - снять галочку (Вид - Расширенный сеанс - ввести логин и пароль, которые придумали при установке Ubuntu)
+Параметры - Контрольные точки - снять галочку
+
+Настройки расширенного режима можно найти по пути:
+C:\Users\ovvla\AppData\Roaming\Microsoft\Windows\Hyper-V\Client\1.0
+
+Устранение проблем с подключением к расширенному режиму:
+sudo systemctl status xrdp
+sudo systemctl enable xrdp - при необходимости
+sudo systemctl restart xrdp - при необходимости
+sudo nano /etc/xrdp/startwm.sh
+Добавить
+unset DBUS_SESSION_BUS_ADDRESS
+unset XDG_RUNTIME_DIR
+перед
+test –x /etc/X11/Xsession && exec /etc/X11/Xsession
+далее
+sudo reboot
+
+Устранение появления окна с ошибкой в Ubuntu:
+sudo rm /var/crash/* - убирает сообщения о текущих ошибках
+Окончательно убирает сообщения об ошибках:
+sudo nano /etc/default/apport
+enabled=1 to enabled=0
+
+Изменение размера окна:
+sudo nano /etc/default/grub
+Добавить - video=hyperv_fb:1600x900 или video=hyperv_fb:1280x720 при масштабе 125% - в
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash video=hyperv_fb:1600x900"
+sudo update-grub
+Файл образа находится по пути:
+C:\Users\Public\Documents\Hyper-V\Virtual hard disks
+
+Исполняемый файл:
+#!/usr/bin/env python3
+chmod +x 'имя.py'
+При необходимости перекодировка (убирает ^M в файлах, созданных в windiws):
+tr -d '\r' < 1.py > 2.py
+или (не проверено):
+sed -i 's/\r//' myfile.txt
