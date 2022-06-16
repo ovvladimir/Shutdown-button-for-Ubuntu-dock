@@ -5,3 +5,4 @@ Stop-VM -Name "Ubuntu 18.04 LTS" –TurnOff
 
 powershell -executionpolicy remotesigned -NoExit -Command {vmconnect.exe localhost "Ubuntu 18.04 LTS"; Wait-Event -Timeout 1; Start-VM -Name "Ubuntu 18.04 LTS"}
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -Command "vmconnect.exe localhost Ubuntu` 18.04` LTS; Wait-Event -Timeout 1; Start-VM -Name Ubuntu` 18.04` LTS"
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -Command "vmconnect.exe localhost Ubuntu1804; Wait-Event -Timeout 1; Start-VM -Name Ubuntu1804"
