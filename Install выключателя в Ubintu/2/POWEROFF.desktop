@@ -1,7 +1,0 @@
-
-[Desktop Entry]
-Icon=/temp/bin/u_poff.png
-Name=Выкл
-Terminal=false
-Type=Application
-Exec=gnome-session-quit --power-off
