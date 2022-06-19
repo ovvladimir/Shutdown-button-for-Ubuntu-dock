@@ -4,9 +4,8 @@ from subprocess import Popen, CREATE_NO_WINDOW
 
 t = Tk()
 t.overrideredirect(True)
-Toplevel().attributes('-alpha', 0.25, '-fullscreen', True)
-img = PhotoImage(file=path.join(path.dirname(path.abspath(__file__)), 'icon.png'))
 
+img = PhotoImage(file=path.join(path.dirname(path.abspath(__file__)), 'icon.png'))
 txt = 'Выключение или перезагрузка компьютера'
 clr = '#6495ED'
 w = '#fff'
@@ -16,6 +15,7 @@ l2 = (lambda: f('taskkill /im pythonw.exe & shutdown /r /t 0'), t.destroy,
 
 f = (lambda a: Popen(a, shell=True, creationflags=CREATE_NO_WINDOW))  # f = (lambda a: system(a))
 
+Toplevel().attributes('-alpha', 0.25, '-fullscreen', True)
 fr = Frame(t, bg=w, bd=2)
 fr.pack()
 Label(fr, text=txt, wraplength=120, bg=clr, fg=w, padx=20, pady=20, font='arial 14').grid(row=0, column=0)
